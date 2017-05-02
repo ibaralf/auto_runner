@@ -7,7 +7,8 @@
 
 = To RUN
 * ipconfig - to get IP address of your server (e.g. 10.0.200.70)
-* cd ../path/of/rails/code
+* cd ../path/of/rails/app_root_directory
+* bundle install
 * rails server -b 0.0.0.0 -p 80
 * Using a browser, point to http ://10.0...
 * 
