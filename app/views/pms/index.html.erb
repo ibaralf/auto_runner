@@ -1,0 +1,39 @@
+<div class="container" style="color:red;">
+   <% flash.each do |key, value| %>
+     <div class="alert alert-<%= key %>"><%= value %></div>
+   <% end %>
+</div>
+
+<h1>Preview Maker Status</h1> 
+<% @key_arr.each do |key| %>
+	<% ins = @results[key]%>   
+	<table width="100%" style="height: 100%;" cellpadding="10" cellspacing="0" border="0">
+	
+
+	<tr>
+	<th><h2><%= ins[:name]%></h2></th> 
+	<th></th>
+	</tr>
+	
+	<tr>
+		<td>Current Status:</td> 
+		<% if ins[:status_string] == "FAILED"%>
+			<td> <font color="red"><b><%= ins[:status_string]%></b> </font></td>
+		<%else%>
+			<td><%= ins[:status_string]%></td>
+		<%end%>
+	</tr>
+	<tr class="even">
+		<td>Last Passed: </td>
+		<td><%= ins[:last_passed] %> </td>
+	</tr>
+	<tr>
+		<td>Last Failed:</td>
+		<td><%= ins[:last_failed] %> </td>
+	</tr>
+
+
+	</table>	
+
+
+<% end%>

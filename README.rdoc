@@ -1,0 +1,45 @@
+= This runs a super simple rails server to handle running automation tests. Allows running tests on any instance (e.g. release, production, etc.)
+
+== TODO: Create a chef recipe to easily deploy this.
+
+* Windows based machine or VM
+* Need to install ruby, rails, git
+
+= To RUN
+* ipconfig - to get IP address of your server (e.g. 10.0.200.70)
+* cd ../path/of/rails/code
+* rails server -b 0.0.0.0 -p 80
+* Using a browser, point to http ://10.0...
+* 
+* Select checkboxes of tests to run
+* Click Submit button to start tests
+
+
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

@@ -1,0 +1,21 @@
+<h1>Home#index</h1>
+<p>
+	
+<%= form_for @tests do |f| %>
+
+  <div>
+    <%= f.label :arr_test %>
+    <%= check_box_tag 'tests[]', 'Install Connect' %>
+    <%= check_box_tag 'tests[]', 'Run Upload' %>
+    <%= check_box_tag 'tests[]', 'Remove Connect' %>
+  </div>
+
+  <div><%= f.submit %></div>
+
+<% end %>
+
+<br />
+
+<a href='vnc://10.0.200.170'> View Test Machine (Use Mac Safari)</a>
+	
+</p>

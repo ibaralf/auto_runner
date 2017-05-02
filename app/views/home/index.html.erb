@@ -1,0 +1,75 @@
+<div class="container" style="color:red;">
+   <% flash.each do |key, value| %>
+     <div class="alert alert-<%= key %>"><%= value %></div>
+   <% end %>
+</div>
+
+<h1>Files Smoker</h1>
+<table width="100%" style="height: 100%;" cellpadding="10" cellspacing="0" border="0">
+		<tr>
+			<th><b>Instance & Admin User</b></th>
+		</tr>
+		<td width="100%" valign="top" bgcolor="">
+
+
+<p>
+	
+
+        
+<form action="save_data" method="post">
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+	
+	<b>Files URL:</b> <input type="text" name="host" value="https://testeng.qa.asperafiles.com" size="50" /> <br/><br />
+	<b>Files Backend:</b> <input type="text" name="backend" value="https://api.qa.asperafiles.com" size="50" /> <br/><br />
+	<b>Admin User Email:</b> <input type="email" name="email" value="ibarra@asperasoft.com" size="30"/><br />
+	<b>Password:</b> <input type="password" name="password" value="Aspera123_" size="30"/>  &nbsp; <br/><br /> 
+	<b>Workspace Node Name:</b> <input type="text" name="node_name" value="default" size="24"/> &nbsp;
+	<b>Secret:</b> <input type="password" name="node_secret" value="aspera" size="18"/> &nbsp;<br/><br /> 
+	<b>Admin Shared Node:</b> <input type="text" name="node_name_admin_share" value="default" size="24"/> &nbsp;
+	<b>Secret:</b> <input type="password" name="node_secret_admin_share" value="aspera" size="18"/> &nbsp;
+	<br />
+	</td>
+		</tr></table>
+	
+	<h3>Select tests to Run: </h3>	
+	<table width="100%" style="height: 100%;" cellpadding="10" cellspacing="0" border="0">
+		<tr>
+			<th><b>User View Tests: (Approx. Run times)</b></th>
+			<th><b>Admin View Tests: (Approx. Run times)</b></th>
+		</tr>
+		<tr>
+		<td width="50%" valign="top" align="left" bgcolor="">
+	<h4>User View Tests: (Approx. Run times)</h4>
+	<input type="checkbox" name="tests[]" value="aaa_install_connect.rb"> Install Connect (3m 30s)<br/>
+	<input type="checkbox" name="tests[]" value="abm_login_spec.rb"> Admin/Regular Users Login, Switch Workspaces (1m 30s)<br/>
+	<input type="checkbox" name="tests[]" value="adm_upload_download_spec.rb"> Upload, Download, Delete Files (3m 45s)</br/>
+	<input type="checkbox" name="tests[]" value="aga_send_package_spec.rb"> Send Package (6m 0s) <br/>
+	<input type="checkbox" name="tests[]" value="bma_dropboxes_spec.rb"> Dropboxes (1m 52s) <br/>
+	<input type="checkbox" name="tests[]" value="cga_public_invite_me_spec.rb"> Public Invite To Me (2m 0s) <br/>
+	<input type="checkbox" name="tests[]" value="dna_sharing_spec.rb"> Sharing - Folders (4m 0s) <br/>
+	<input type="checkbox" name="tests[]" value="dtm_admin_shared_spec.rb"> Administratively Shared Folders (2m 10s) <br/>
+	<input type="checkbox" name="tests[]" value="zaa_remove_connect.rb"> Remove Connect (39s) <br/> <br/>
+		</td>
+
+		<td width="50%" valign="top" align="left" bgcolor="">
+	<h4>Admin View Tests: (Approx. Run times)</h4>
+	<input type="checkbox" name="admintests[]" value="ama_create_users_spec.rb" disabled> Create Users - Regular, Admin (52s) <br/>
+	<input type="checkbox" name="admintests[]" value="baa_create_groups_spec.rb" disabled> Create Groups (50s) <br/>
+	<input type="checkbox" name="admintests[]" value="caa_create_workspaces_spec.rb" disabled> Create Workspaces () <br/>
+	<input type="checkbox" name="admintests[]" value="daa_create_dropboxes_spec.rb" disabled> Create Dropboxes () <br/>
+	<input type="checkbox" name="admintests[]" value="maa_delete_dropboxes_spec.rb" disabled> Delete Dropboxes () <br/>
+	<input type="checkbox" name="admintests[]" value="naa_delete_workspaces_spec.rb" disabled> Delete Workspaces () <br/>
+	<input type="checkbox" name="admintests[]" value="oaa_delete_groups_spec.rb" disabled> Delete Groups (33s) <br/>
+	<input type="checkbox" name="admintests[]" value="paa_delete_users_spec.rb" disabled> Delete Users (37s) <br/>
+	</td>
+		</tr></table>
+
+	<input type="submit" value="Submit" style="background-color: #7FFFD4"/> (Takes about 1 minute to start)
+	<br /><br/>
+	<a href='vnc://10.0.200.170'> View Test Machine (Supports only Mac Screen Sharing)</a> <br/><br/>
+	<a href='https://test.aspera.us/testrail/index.php?/runs/overview/5' target='_blank'>	TestRail Results (Login Required)</a>
+	
+</form>
+
+
+
